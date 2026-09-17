@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Calendar Reader</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
+         max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; }
+  h1 { margin-bottom: 0.25rem; }
+  .sub { opacity: 0.75; margin-top: 0; }
+  code { font-size: 0.95em; }
+</style>
+</head>
+<body>
+<h1>Hermes Calendar Reader</h1>
+<p class="sub">A private, single-user plugin that reads Google Calendar events.</p>
+
+<h2>What it does</h2>
+<p>Hermes Calendar Reader is a personal assistant plugin. It lets its single operator ask
+questions about their own calendar &mdash; what is scheduled today, when a given event starts,
+whether a time slot is free &mdash; and answers them by reading events from a small, fixed list of
+Google calendars the operator has explicitly allowed.</p>
+
+<h2>How it accesses Google Calendar</h2>
+<ul>
+  <li>It requests exactly one scope,
+      <code>https://www.googleapis.com/auth/calendar.events.readonly</code>, which is read-only.
+      It cannot create, change, or delete any event.</li>
+  <li>It signs in as one dedicated Google account, and reads only the calendars that have been
+      shared with that account and listed in the plugin's own configuration.</li>
+  <li>It runs on the operator's own machine. There is no server, no shared deployment, and no
+      other user.</li>
+</ul>
+
+<h2>Who it is for</h2>
+<p>One person: its operator. It is not offered to the public, has no sign-up, and is not
+distributed as a product.</p>
+
+<h2>Privacy</h2>
+<p>See the <a href="privacy.html">Privacy Policy</a> for how Google user data is accessed, used,
+stored, and shared.</p>
+</body>
+</html>

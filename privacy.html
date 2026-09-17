@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; Hermes Calendar Reader</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
+         max-width: 42rem; margin: 0 auto; padding: 2.5rem 1rem; }
+  h1 { margin-bottom: 0.25rem; }
+  .sub { opacity: 0.75; margin-top: 0; }
+  code { font-size: 0.95em; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="sub">Hermes Calendar Reader &mdash; last updated 17 September 2026</p>
+
+<p>Hermes Calendar Reader ("the app") is a private, single-user application operated by one
+individual for their own use. This policy describes how it handles Google user data.</p>
+
+<h2>What data the app accesses</h2>
+<p>The app requests one OAuth scope,
+<code>https://www.googleapis.com/auth/calendar.events.readonly</code>. With it, the app reads
+calendar events &mdash; titles, times, locations, descriptions, and attendance status &mdash; from a
+fixed list of calendars that the operator has shared with the app's dedicated Google account and
+listed in the app's configuration. The app reads no other calendars and requests no other Google
+data. The scope is read-only, so the app cannot create, modify, or delete calendar data.</p>
+
+<h2>How the data is used</h2>
+<p>Calendar data is used solely to answer the operator's own questions about their schedule, in
+the moment they are asked. It is not used for advertising, profiling, analytics, or training any
+model, and it is not used to build any user profile.</p>
+
+<h2>How the data is stored</h2>
+<p>The app runs on the operator's own computer. Calendar event data is held in memory only for
+the duration of a request and is not written to any database or long-term store by the app. The
+OAuth refresh token issued by Google is stored locally on that machine, with file permissions
+restricted to the operator, so the app can keep reading the allowed calendars without repeated
+sign-in.</p>
+
+<h2>How the data is shared</h2>
+<p>Calendar data is not sold, rented, or shared with any third party. It is shown only to the
+operator, who is also the account holder whose calendars are being read. When the operator asks a
+question, the relevant event details are sent to the language-model provider that powers the
+operator's assistant, purely to phrase the answer; no other recipient receives the data.</p>
+
+<h2>Data retention and deletion</h2>
+<p>Because no calendar data is retained, there is nothing to delete beyond the stored OAuth
+token. The operator can revoke the app's access at any time from their Google Account's
+<a href="https://myaccount.google.com/connections">linked-apps settings</a>, which immediately
+ends the app's ability to read any calendar, and can delete the locally stored token.</p>
+
+<h2>Limited Use</h2>
+<p>Hermes Calendar Reader's use of information received from Google APIs will adhere to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services
+User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Children</h2>
+<p>The app has exactly one user, its adult operator. It is not directed at children.</p>
+
+<h2>Changes to this policy</h2>
+<p>Any change to this policy will be published on this page, with the date above updated.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy can be raised as an issue on the app's GitHub repository, linked
+from the <a href="index.html">homepage</a>.</p>
+</body>
+</html>
