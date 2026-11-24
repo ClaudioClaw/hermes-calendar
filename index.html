@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hermes Calendar Reader</title>
+<title>Hermes Calendar</title>
 <style>
   :root { color-scheme: light dark; }
   body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
@@ -14,22 +14,31 @@
 </style>
 </head>
 <body>
-<h1>Hermes Calendar Reader</h1>
-<p class="sub">A private, single-user plugin that reads Google Calendar events.</p>
+<h1>Hermes Calendar</h1>
+<p class="sub">A private, single-user plugin that reads Google Calendar events and keeps events
+on calendars its operator has made writable.</p>
 
 <h2>What it does</h2>
-<p>Hermes Calendar Reader is a personal assistant plugin. It lets its single operator ask
-questions about their own calendar &mdash; what is scheduled today, when a given event starts,
-whether a time slot is free &mdash; and answers them by reading events from a small, fixed list of
-Google calendars the operator has explicitly allowed.</p>
+<p>Hermes Calendar is a personal assistant plugin. It lets its single operator ask questions
+about their own calendar &mdash; what is scheduled today, when a given event starts, whether a
+time slot is free &mdash; and answers them by reading events from a small, fixed list of Google
+calendars the operator has explicitly allowed.</p>
+<p>On the few calendars the operator has also made writable, it can place, move and remove
+events for the operator, for example to keep the sessions of a training plan in a dedicated
+calendar. It writes only after the operator has agreed to the change.</p>
 
 <h2>How it accesses Google Calendar</h2>
 <ul>
-  <li>It requests exactly one scope,
-      <code>https://www.googleapis.com/auth/calendar.events.readonly</code>, which is read-only.
-      It cannot create, change, or delete any event.</li>
-  <li>It signs in as one dedicated Google account, and reads only the calendars that have been
+  <li>It signs in as one dedicated Google account, and only reaches calendars the operator has
       shared with that account and listed in the plugin's own configuration.</li>
+  <li>For reading, it uses the read-only scope
+      <code>https://www.googleapis.com/auth/calendar.events.readonly</code>.</li>
+  <li>For writing, it uses a separate grant with the scope
+      <code>https://www.googleapis.com/auth/calendar.events</code>. It writes only to calendars
+      listed as writable in its configuration and shared with edit rights for events. Every other
+      calendar is shared read-only, so Google itself refuses any change to it.</li>
+  <li>It never sends invitations or notifications, and does not create recurring events or events
+      with guests.</li>
   <li>It runs on the operator's own machine. There is no server, no shared deployment, and no
       other user.</li>
 </ul>
@@ -41,5 +50,9 @@ distributed as a product.</p>
 <h2>Privacy</h2>
 <p>See the <a href="privacy.html">Privacy Policy</a> for how Google user data is accessed, used,
 stored, and shared.</p>
+
+<h2>Contact</h2>
+<p>Questions can be raised as an issue on this site's
+<a href="https://github.com/ClaudioClaw/hermes-calendar/issues">GitHub repository</a>.</p>
 </body>
 </html>
